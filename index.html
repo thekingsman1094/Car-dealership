@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thekingsman Motor Co. | Premium New & Certified Cars</title>
+    <meta
+      name="description"
+      content="Shop new and certified pre-owned vehicles at Meridian Motor Co. Financing, trade-ins, and same-day test drives." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem("mmc-theme");
+        var theme =
+          saved ||
+          (window.matchMedia("(prefers-color-scheme: light)").matches
+            ? "light"
+            : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="topbar">
+      <span>Mon–Sat 9:00–18:00 · Sun 11:00–16:00</span>
+      <a href="tel:+234 8101653574">+234 8101653574</a>
+      <span>12 Ahmadu Bello Way, Opp Jifatu store, Kano</span>
+    </div>
+
+    <header class="site-header">
+      <a class="logo" href="#home">
+        <span class="logo-mark">K</span>
+        <span>
+          <strong>Thekingsman</strong>
+          <small>Motor Co.</small>
+        </span>
+      </a>
+      <nav class="nav" id="site-nav">
+        <a href="#home">Home</a>
+        <a href="#inventory">Inventory</a>
+        <a href="#services">Services</a>
+        <a href="#finance">Finance</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Switch theme">
+          Theme
+        </button>
+        <a class="btn btn-primary" href="#inventory">Shop cars</a>
+        <button
+          type="button"
+          class="menu-btn"
+          id="menu-btn"
+          aria-label="Open menu">
+          Menu
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">Kano showroom · 2026 collection</p>
+          <h1>Drive the car that actually fits your life.</h1>
+          <p class="lede">
+            New, certified pre-owned, and fully inspected imports. Transparent
+            pricing, in-house finance, and a test drive the same day you visit.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#inventory">Browse inventory</a>
+            <a class="btn btn-ghost" href="#contact">Book a test drive</a>
+          </div>
+          <dl class="hero-stats">
+            <div>
+              <dt>120+</dt>
+              <dd>cars on the lot</dd>
+            </div>
+            <div>
+              <dt>4.9</dt>
+              <dd>customer rating</dd>
+            </div>
+            <div>
+              <dt>48h</dt>
+              <dd>finance decisions</dd>
+            </div>
+          </dl>
+        </div>
+        <figure class="hero-media">
+          <img
+            src="//images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80"
+            alt="Porsche sports car on the showroom floor" />
+          <figcaption>Featured: Porsche 911 Carrera · ₦186,500,000</figcaption>
+        </figure>
+      </section>
+
+      <section class="strip">
+        <p>Certified 150-point inspection</p>
+        <p>Warranty up to 24 months</p>
+        <p>Trade-in in 30 minutes</p>
+        <p>Nationwide delivery</p>
+      </section>
+
+      <section class="inventory" id="inventory">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Live inventory</p>
+            <h2>Cars you can see, sit in, and take home.</h2>
+          </div>
+          <p class="section-note">
+            Prices include documentation. Haggle less. Drive more.
+          </p>
+        </div>
+
+        <form class="filters" id="filters">
+          <label>
+            Make
+            <select id="filter-make">
+              <option value="">All makes</option>
+            </select>
+          </label>
+          <label>
+            Body
+            <select id="filter-body">
+              <option value="">All bodies</option>
+              <option>Sedan</option>
+              <option>SUV</option>
+              <option>Coupe</option>
+              <option>Hatchback</option>
+              <option>Truck</option>
+            </select>
+          </label>
+          <label>
+            Condition
+            <select id="filter-condition">
+              <option value="">New & used</option>
+              <option>New</option>
+              <option>Certified</option>
+            </select>
+          </label>
+          <label>
+            Max price
+            <select id="filter-price">
+              <option value="">Any budget</option>
+              <option value="25,000,000">Under ₦25m</option>
+              <option value="50,000,000">Under ₦50m</option>
+              <option value="100,000,000">Under ₦100m</option>
+            </select>
+          </label>
+          <label class="search-label">
+            Search
+            <input
+              id="filter-search"
+              type="search"
+              placeholder="Model, year, color…" />
+          </label>
+        </form>
+
+        <p class="results-count" id="results-count"></p>
+        <div class="car-grid" id="car-grid"></div>
+      </section>
+
+      <section class="services" id="services">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Ownership</p>
+            <h2>After the handshake, we stay on the road with you.</h2>
+          </div>
+        </div>
+        <div class="service-grid">
+          <article>
+            <h3>Workshop</h3>
+            <p>
+              Manufacturer-trained technicians, genuine parts, and loaner cars
+              for jobs over a day.
+            </p>
+          </article>
+          <article>
+            <h3>Trade-in</h3>
+            <p>
+              Instant written offer on your current vehicle. Use it as a deposit
+              or walk away with cash.
+            </p>
+          </article>
+          <article>
+            <h3>Detailing</h3>
+            <p>
+              Ceramic coat, paint correction, and interior restoration before
+              you collect.
+            </p>
+          </article>
+          <article>
+            <h3>Delivery</h3>
+            <p>
+              White-glove drop-off across Nigeria. Insurance and papers travel
+              with the car.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="finance" id="finance">
+        <div class="finance-copy">
+          <p class="eyebrow">In-house finance</p>
+          <h2>Know the monthly number before you fall in love.</h2>
+          <p>
+            Partner banks on site. Decisions in two business days for salaried
+            and verified self-employed buyers.
+          </p>
+        </div>
+        <form class="finance-card" id="finance-form">
+          <label>
+            Vehicle price (₦)
+            <input
+              id="loan-price"
+              type="number"
+              min="1000000"
+              step="100000"
+              value="42000000" />
+          </label>
+          <label>
+            Down payment (₦)
+            <input
+              id="loan-down"
+              type="number"
+              min="0"
+              step="100000"
+              value="10000000" />
+          </label>
+          <label>
+            Term (months)
+            <select id="loan-term">
+              <option value="12">12</option>
+              <option value="24">24</option>
+              <option value="36" selected>36</option>
+              <option value="48">48</option>
+              <option value="60">60</option>
+            </select>
+          </label>
+          <label>
+            Annual interest (%)
+            <input
+              id="loan-rate"
+              type="number"
+              min="1"
+              max="40"
+              step="0.1"
+              value="18" />
+          </label>
+          <p class="payment" id="loan-result">Monthly: ₦0</p>
+        </form>
+      </section>
+
+      <section class="about" id="about">
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1400&q=80"
+            alt="Thekingsman Motor Co. showroom interior" />
+        </figure>
+        <div>
+          <p class="eyebrow">Since 2014</p>
+          <h2>
+            A dealership that treats buying a car like a serious purchase.
+          </h2>
+          <p>
+            Thekingsman Motor Co. is a family-run house in Kano. We buy clean
+            stock, publish every inspection report, and will not list a car we
+            would not put our own names on.
+          </p>
+          <ul class="checklist">
+            <li>No hidden admin fees at signing</li>
+            <li>7-day exchange on certified cars</li>
+            <li>Service history on every used listing</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div>
+          <p class="eyebrow">Visit or write</p>
+          <h2>Book a test drive. Ask a hard question. Both are welcome.</h2>
+          <address>
+            12 Ahmadu Bello Way, Opp Jifatu store, Kano<br />
+            <a href="mailto:Thekingsman410@gmail.com"
+              >Thekingsman410@gmail.com</a
+            ><br />
+            <a href="tel:+2348101653574">+234 810 165 3574</a>
+          </address>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <label>
+            Name
+            <input name="name" type="text" required autocomplete="name" />
+          </label>
+          <label>
+            Phone
+            <input name="phone" type="tel" required autocomplete="tel" />
+          </label>
+          <label>
+            Interest
+            <select name="interest">
+              <option>Test drive</option>
+              <option>Finance quote</option>
+              <option>Trade-in</option>
+              <option>Service booking</option>
+            </select>
+          </label>
+          <label>
+            Message
+            <textarea
+              name="message"
+              rows="4"
+              placeholder="Which car, and when can you come in?"></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Send request</button>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 Thekingsman Motor Co. All rights reserved.</p>
+      <p>Prices in Nigerian Naira. Availability changes daily.</p>
+    </footer>
+
+    <div class="modal" id="car-modal" hidden>
+      <div
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title">
+        <button
+          type="button"
+          class="modal-close"
+          id="modal-close"
+          aria-label="Close">
+          Close
+        </button>
+        <img id="modal-image" alt="" />
+        <div class="modal-body">
+          <p class="eyebrow" id="modal-tag"></p>
+          <h3 id="modal-title"></h3>
+          <p id="modal-price" class="modal-price"></p>
+          <ul id="modal-specs"></ul>
+          <a class="btn btn-primary" href="#contact">Reserve this car</a>
+        </div>
+      </div>
+    </div>
+
+    <script defer src="app.js"></script>
+  </body>
+</html>
